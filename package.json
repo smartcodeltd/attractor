@@ -5,7 +5,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "nodemon --exec 'ng build && cross-env PORT=4200 NODE_ENV=TEST node start'",
+    "start": "ng build && cross-env PORT=4200 NODE_ENV=TEST node start",
+    "start:watch": "nodemon --exec 'ng build && cross-env PORT=4200 NODE_ENV=TEST node start'",
     "start:ui": "ng serve",
     "start:api": "cross-env PORT=4200 NODE_ENV=TEST node start",
     "build": "ng build",
