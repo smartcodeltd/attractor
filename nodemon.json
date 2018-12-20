@@ -1,0 +1,12 @@
+{
+  "ignore": [
+    "**/*.spec.ts",
+    "node_modules"
+  ],
+  "watch": [
+    "ui",
+    "rest-api",
+    "core"
+  ],
+  "ext": "ts,scss,html"
+}
