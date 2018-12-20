@@ -15,6 +15,6 @@ export class CartesianCoordinate {
     // todo: actually calculate the distance from another coordinate
     // e.g. return Math.abs(this.x - another.x);
 
-    return 0;
+    throw new Error('Implement me');
   }
 }
