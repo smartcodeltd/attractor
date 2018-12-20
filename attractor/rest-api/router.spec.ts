@@ -10,7 +10,7 @@ describe('REST API', () => {
     // Documentation:
     // - https://github.com/visionmedia/supertest
 
-    it(`complains if the route doesn't exist`, () => {
+    it(`returns no announcements if there are none`, () => {
         const api = express().use('/api', router(express.Router(), new AttractorApp()));
 
         return request(api).get('/api/announcements?x=0&y=0').expect(200, []);
