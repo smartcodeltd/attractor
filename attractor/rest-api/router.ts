@@ -11,16 +11,18 @@ import * as express from 'express';
  */
 export function router(api: express.Router, app: AttractorApp): express.Router {
 
-  api.get('/announcements', (req: express.Request, res: express.Response) => {
+    api.use(express.json());
 
-    // convert url query string, such as /api/announcements?x=0&y=0 to a domain object
-    const coordinate = new CartesianCoordinate(req.query.x, req.query.y);
+    api.get('/announcements', (req: express.Request, res: express.Response) => {
 
-    // delegate the business logic to AttractorApp
-    res.send(app.announcementsFor(coordinate));
-  });
+        // convert url query string, such as /api/announcements?x=0&y=0 to a domain object
+        const coordinate = new CartesianCoordinate(req.query.x, req.query.y);
 
-  // todo: add other routes if needed
+        // delegate the business logic to AttractorApp
+        res.send(app.announcementsFor(coordinate));
+    });
 
-  return api;
+    // todo: add other routes if needed
+
+    return api;
 }
